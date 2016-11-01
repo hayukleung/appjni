@@ -13,7 +13,7 @@ extern "C" {
  * Signature: ()Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_com_hayukleung_appjni_JNIInterface_stringFromJNI
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

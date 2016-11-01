@@ -7,9 +7,9 @@ package com.hayukleung.appjni;
  */
 public class JNIInterface {
 
-    static {
-        System.loadLibrary("app-jni");
-    }
+  static {
+    System.loadLibrary("app-jni");
+  }
 
-    public native String stringFromJNI();
+  public native String stringFromJNI();
 }

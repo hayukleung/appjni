@@ -24,13 +24,12 @@ import android.widget.TextView;
  */
 public class AppJNI extends Activity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+  @Override public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        TextView tv = new TextView(this);
-        JNIInterface jniInterface = new JNIInterface();
-        tv.setText(jniInterface.stringFromJNI());
-        setContentView(tv);
-    }
+    TextView tv = new TextView(this);
+    JNIInterface jniInterface = new JNIInterface();
+    tv.setText(jniInterface.stringFromJNI());
+    setContentView(tv);
+  }
 }

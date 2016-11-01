@@ -1,80 +1,65 @@
 apply plugin: 'com.android.model.application'
 
 model {
-    android {
-        compileSdkVersion 23
-        buildToolsVersion "23.0.2"
+  android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
 
-        defaultConfig.with {
-            applicationId "com.hayukleung.appjni"
-//            minSdkVersion 3
-//            targetSdkVersion 3
-            minSdkVersion.apiLevel 15
-            targetSdkVersion.apiLevel 23
+    defaultConfig.with {
+      applicationId "com.hayukleung.appjni"
+      minSdkVersion.apiLevel 15
+      targetSdkVersion.apiLevel 24
 
-            versionCode 1
-            versionName "1.0"
-
-//            buildConfigFields {
-//                create() {
-//                    type "int"
-//                    name "VALUE"
-//                    value "1"
-//                }
-//            }
-        }
-
-        sources {
-            main {
-                jni {
-                    source {
-                        srcDir "src"
-                    }
-                }
-            }
-        }
+      versionCode 1
+      versionName "1.0"
     }
 
-    android.ndk {
-        moduleName = "app-jni"
+    sources {
+      main {
+        jni {
+          source {
+            srcDir "src"
+          }
+        }
+      }
     }
+  }
 
-    android.buildTypes {
+  android.ndk {
+    moduleName = "app-jni"
+  }
 
-//            release {
-//                minifyEnabled false
-//                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-//            }
+  android.buildTypes {
 
-        release {
-            minifyEnabled false
-            proguardFiles.add(file("proguard-rules.pro"))
-        }
+    release {
+      minifyEnabled false
+      proguardFiles.add(file("proguard-rules.pro"))
     }
+  }
 
-    android.productFlavors {
+  android.productFlavors {
 
-        create("arm") {
-            ndk.abiFilters.add("armeabi")
-        }
-        create("arm7") {
-            ndk.abiFilters.add("armeabi-v7a")
-        }
-        create("arm8") {
-            ndk.abiFilters.add("arm64-v8a")
-        }
-        create("x86") {
-            ndk.abiFilters.add("x86")
-        }
-        create("x86-64") {
-            ndk.abiFilters.add("x86_64")
-        }
-        create("mips") {
-            ndk.abiFilters.add("mips")
-        }
-        create("mips-64") {
-            ndk.abiFilters.add("mips64")
-        }
-        create("all")
+    create("arm") {
+      ndk.abiFilters.add("armeabi")
     }
+    create("arm7") {
+      ndk.abiFilters.add("armeabi-v7a")
+    }
+    create("arm8") {
+      ndk.abiFilters.add("arm64-v8a")
+    }
+    create("x86") {
+      ndk.abiFilters.add("x86")
+    }
+    create("x86-64") {
+      ndk.abiFilters.add("x86_64")
+    }
+    create("mips") {
+      ndk.abiFilters.add("mips")
+    }
+    create("mips-64") {
+      ndk.abiFilters.add("mips64")
+    }
+    create("all")
+  }
 }
